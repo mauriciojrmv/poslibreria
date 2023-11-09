@@ -155,11 +155,11 @@ class ControladorVentas{
 
 					$printer -> text("Inventory System"."\n");//Nombre de la empresa
 
-					$printer -> text("NIT: 71.759.963-9"."\n");//Nit de la empresa
+					$printer -> text("NIT: 5866237017"."\n");//Nit de la empresa
 
-					$printer -> text("Dirección: Calle 44B 92-11"."\n");//Dirección de la empresa
+					$printer -> text("Dirección: km 6 doble via la guardia"."\n");//Dirección de la empresa
 
-					$printer -> text("Teléfono: 300 786 52 49"."\n");//Teléfono de la empresa
+					$printer -> text("Teléfono: 76032981"."\n");//Teléfono de la empresa
 
 					$printer -> text("FACTURA N.".$_POST["nuevaVenta"]."\n");//Número de factura
 

@@ -74,13 +74,13 @@ $bloque1 = <<<EOF
 				Inventory System
 				
 				<br>
-				NIT: 71.759.963-9
+				NIT: 5866237017
 
 				<br>
-				Dirección: Calle 44B 92-11
+				Dirección: km6 doble via la guardia
 
 				<br>
-				Teléfono: 300 786 52 49
+				Teléfono: 76032981
 
 				<br>
 				FACTURA N.$valorVenta
