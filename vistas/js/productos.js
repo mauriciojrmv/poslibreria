@@ -296,3 +296,63 @@ $(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
 
 })
 	
+
+/*=============================================
+RECONOCIMIENTO PRODUCTO RETORNO IA
+=============================================*/
+
+function reconocerProductoYBuscar(imagen) {
+    var datos = new FormData();
+    datos.append('imagenProducto', imagen);
+
+    $.ajax({
+        url: 'ruta/a/reconocimiento.controlador.php',
+        method: 'POST',
+        data: datos,
+        // ... otras configuraciones AJAX ...
+        success: function(codigoProducto) {
+            if (codigoProducto) {
+                // Llama a la función para agregar el producto a la venta
+                agregarProductoAVenta(codigoProducto);
+            }
+        }
+    });
+}
+
+
+function agregarProductoAVenta(codigoProducto) {
+    agregarProductoPorCodigo(codigoProducto);
+}
+
+function agregarProductoPorCodigo(codigo) {
+    // Aquí iría tu lógica actual para buscar un producto en la base de datos
+    // y actualizar la interfaz de usuario con los detalles del producto
+
+    // Por ejemplo, realizar una solicitud AJAX al servidor para obtener los detalles del producto
+    $.ajax({
+        url: 'controlador/productos.controlador.php',
+        method: 'POST',
+        data: { codigoProducto: codigo },
+        success: function(respuesta) {
+            // 'respuesta' contiene los detalles del producto
+            // Actualiza la interfaz de usuario aquí con la información del producto
+            // añadir una fila a una tabla de productos en la venta
+            if (respuesta.exito) {
+                //  función que añade productos a una tabla
+                // en la interfaz de la venta, algo como esto:
+                añadirProductoALaTablaDeVenta(respuesta.producto);
+            }
+        },
+        error: function() {
+            alert("Error al buscar el producto");
+        }
+    });
+}
+
+
+//  función que añade el producto a la tabla en la interfaz de la venta
+function añadirProductoALaTablaDeVenta(producto) {
+    // Aquí deberías agregar la lógica para actualizar la interfaz de usuario
+    // con los detalles del producto, como añadir una fila en una tabla de venta
+    // con el nombre del producto, precio, cantidad, etc.
+}

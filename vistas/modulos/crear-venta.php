@@ -20,7 +20,7 @@ if($_SESSION["perfil"] == "Especial"){
     
     <h1>
       
-      Crear venta
+      Crear ventas
     
     </h1>
 
@@ -162,6 +162,13 @@ if($_SESSION["perfil"] == "Especial"){
                 <input type="hidden" id="listaProductos" name="listaProductos">
 
                 <!--=====================================
+                ENTRADA PARA AGREGAR PRODUCTO RECONOCIDO CON IA
+                ======================================--> 
+
+                <input type="hidden" id="productoReconocido" name="productoReconocido"> 
+
+
+                <!--=====================================
                 BOTÓN PARA AGREGAR PRODUCTO
                 ======================================-->
 
@@ -196,7 +203,7 @@ if($_SESSION["perfil"] == "Especial"){
                             
                             <div class="input-group">
                            
-                              <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" placeholder="0" required>
+                              <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" value="0" required>
 
                                <input type="hidden" name="nuevoPrecioImpuesto" id="nuevoPrecioImpuesto" required>
 
@@ -248,8 +255,10 @@ if($_SESSION["perfil"] == "Especial"){
                       <select class="form-control" id="nuevoMetodoPago" name="nuevoMetodoPago" required>
                         <option value="">Seleccione método de pago</option>
                         <option value="Efectivo">Efectivo</option>
+                        <!--=====================================
                         <option value="TC">Tarjeta Crédito</option>
-                        <option value="TD">Tarjeta Débito</option>                  
+                        <option value="TD">Tarjeta Débito</option>   
+                        ======================================-->               
                       </select>    
 
                     </div>
